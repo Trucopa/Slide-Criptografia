@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Criptografia</title>
+
+		<meta name="description" content="Uma visão rápida sobre criptografia">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Criptografia</h1>
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=revealjscom" id="_carbonads_js"></script>
+				</section>
+
+				<section>
+					<h3>Definição</h3>
+					<p>
+                        <b>Segundo TechTudo:</b> "Em linhas gerais, criptografia é o nome que se dá a
+                         técnicas que transformam informação inteligível em algo que um agente externo
+                          seja incapaz de compreender"<br>
+                        <br>
+                        <b>Segundo o Aurélio:</b> Escrita secreta, em cifra, isto é, por meio de 
+                        abreviaturas ou sinais convencionais.
+                        <br><br>
+                        No fim, criptografia é uma forma de esconder uma informação em tráfego 
+                        de forma que só o remetente e o destinatário saibam seu cnoteúdo.
+                    </p>
+                </section>
+                <section>
+                    <p>
+                        A criptografia não é uma ideia nova, é utilizada desde antigamente mas era predominante aos 
+                        livros e documentos, com o advento da internet e a troca rápida e fácil de informações que 
+                        ela propcia, tornou-se fundamental o uso da criptografia para proteger os dados de serem "roubados"
+                         enquanto "passeam" na grande rede. 
+                    </p>
+                </section>
+                <section>
+                    <h3>Princípios</h3>
+                    <ul>
+                        <li>Confidencialidade</li>
+                        <li>Autenticação</li>
+                        <li>Integridade</li>
+                        <li>Não repudiabilidade</li>
+                    </ul>
+                </section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h1>História</h1>
+                    </section>
+                    <section>
+                        <h3>Criptografia Clássica</h3>
+                        <p>
+                            A criptografia clássica tal como o nome indica 
+                            é a criptografia mais antiga conhecida pelo homem.<br><br>
+                            <b>Cifra de César</b> 
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Criptografia Moderna</h3>
+                        <p>
+                            O nascimento da criptografia moderna foi durante a segunda guerra 
+                            mundial. Numa era tensa em que a informação sobre possíveis alvos/bases 
+                            era cada vez mais crucial de manter secreta foi necessário o desenvolvimento 
+                            algo capaz de fazer esse trabalho.
+                        </p>
+                    </section>
+					<section >
+						<h2>A enigma</h2>
+						<p>
+                            levantou um grande interesse por parte da marinha de guerra alemã em
+                             1926, quando passou a ser usado como seu principal meio de comunicação 
+                             e ficaram conhecidas como Funkschlüssel C
+                        </p>
+					</section>
+					<section>
+                            <img src="Images/Enigma.jpg" alt="">
+                    </section>
+                    <section>
+                        <p>
+                            Criptografia passou a ser usada em larga escala
+                            Com isso, viu-se a necessidade de desenvolver novos tipos 
+                            de criptografia.
+                        </p>
+                    </section>
+				</section>
+
+				<section>
+					<section>
+                            <h1>Tipos</h1>
+                            <p>\_(-.-)_/ O nível de segurança de uma criptografia é medido no número de bits</p>
+                    </section>
+                    <section>
+                        <h3>Hash</h3>
+                        <p>
+                            A criptografia hash permite que, através de uma string de qualquer tamanho, 
+                            seja calculado um identificador digital de tamanho fixo, chamado de valor hash. 
+                            O valor hash geralmente é formado por 16 bytes ou 20 bytes, mas pode se estender, 
+                            embora não passe de 512 bytes.
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Chaves Simétricas</h3>
+                        <p>
+                            É o tipo mais simples de criptografia, já que tanto o emissor quanto o receptor da 
+                            mensagem possuem a mesma chave, ou seja, a mesma chave é usada tanto na codificação 
+                            quanto na decodificação.<br>
+                            Para ser realizada, basta que o emissor, antes de enviar a mensagem criptografada, 
+                            envie a chave privada que será utilizada para descriptografá-la.
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Chaves Assimétricas</h3>
+                        <p>
+                            Diferentemente do método de Chave Simétrica, esse tipo utiliza 2 chaves, uma pública e 
+                            uma privada. O sistema funciona da forma que alguém cria uma chave e envia essa chave à 
+                            quem quiser mandar informações à ela, essa é a chamada chave pública. Com ela é feita a 
+                            codificação da mensagem. Para decodificação será necessário utilizar uma outra chave que 
+                            deve ser criada, a chave privada – que é secreta.
+                        </p>
+                    </section>
+                    <section>
+                        <h4><b>RSA</b> (Rivest, Chamir e Adleman)</h4>
+                        <p>
+                            Criado em 1977, é um dos algoritmos de chave 
+                            assimétrica mais utilizados. Consiste na multiplicação de 2 números primos 
+                            muito grandes para a geração de um terceiro. Para quebrar essa cripografia, 
+                            é necessário a fatoração desse número para encontrar os 2 números primos que o geraram, 
+                            porém, é necessário um poder muito alto de processamento, o que inviabiliza a tarefa. 
+                            A chave privada são os dois números primos, a pública é o terceiro.
+                        </p>
+                    </section>
+                    <section>
+                        <h3>RSA exemplo</h3>
+                        <img src="Images/example.png" alt="">
+                    </section>
+                </section>
+                <section data-background="Images/Leonardo.gif">
+                    <h3>Grupo</h3>
+                    <ul>
+                        <li>Luís Eduardo</li>
+                        <li>Mateus Cardoso</li>
+                        <li>Jailson</li>
+                        <li>Adriel</li>
+                        <li>Roque</li>
+                        <li>Rafael</li>
+                        <li>Paulo Vitor</li>
+                    </ul>
+                </section>
+				<section>
+                    <h2>Referências</h2>
+                    <ul>
+                        <li>https://www.infoescola.com/informatica/criptografia/</li>
+                        <li>https://www.gta.ufrj.br/grad/07_1/ass-dig/Introduo.html</li>
+                        <li>https://pplware.sapo.pt/informacao/conhea-a-historia-da-criptografia/</li>
+                        <li>https://www.lambda3.com.br/2013/01/entendendo-de-verdade-a-criptografia-rsa-parte-iii/</li>
+                    </ul>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			});
+
+		</script>
+	</body>
+</html>
