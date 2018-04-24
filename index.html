@@ -195,8 +195,127 @@
                         <img src="Images/cript-quant.jpg" alt="Criptografia Quântica">
                     </section>
                 </section>
-                <section data-background="Images/Nazare.gif">
-                    <h3>Vamos pra matemática um pouco...</h3>
+                <section>
+                    <section  data-background="Images/Nazare.gif">
+                            <h3>Vamos pra matemática um pouco...</h3>
+                    </section>
+                    <section>
+                        <p>
+                            Usaremos 2 chaves - 1 PÚBLICA e 1 PRIVADA<br>
+                            Não usaremos tabela ASCII<br>
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Tabela de caracteres</h3>
+                        <table border="1">
+                            <tr><th colspan="13" style="text-align: left">Tabela</th></tr>
+                            <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                            <tr><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td></tr>
+                            <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+                            <tr><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td></tr>
+                        </table>
+                    </section>
+                    <section>
+                        <p>
+                            Vamaos assumir dois números primos quaisquer<br>{p = 17 e q = 41}<br><br>
+                            Achamos o <b>n</b> multiplicando-os<br>{n = p*q = 17*41=697}<br><br>
+                            <b>n</b> é o tamanho do conjunto que vamos usar =)
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            Função totinente &#934;(x) = (p-1)*(q-1) = 16*40 = 640<br><br>
+                            Essa função aqui pode ser dita como o "Coração" da RSA!
+                        </p>
+                    </section>
+                    <section>
+                        <h6>Calculando chave pública</h6>
+                        <p>
+                            Escolha um "e" tal que: <br>
+                            1 < <b>e</b> < &#934;(x)   e   MDC [&#934;(x),e] = 1 <br><br>
+                            Usaremos nosso <b>e</b> = 13, mas ele poderia assumir outro valor
+                            desde que obedeça a regra!
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            Usaremos operações modulares!<br>
+                            Sabendo o valor da caractere na tabela, aplicamos a fórmula:<br>
+                            c = m<sup>e</sup> <b>mod</b> n <br><br>
+                            Onde "c" é a chave pública e "m" é o valor numperico da letra
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            Cifrando a palavra TURING temos: <br><br>
+                            T = 20<sup>13</sup> <b>mod</b> 697 = 692 <br>
+                            U = 21<sup>13</sup> <b>mod</b> 697 = 497 <br>
+                            R = 18<sup>13</sup> <b>mod</b> 697 = 256 <br>
+                            I = 9<sup>13</sup> <b>mod</b> 697 = 501 <br>
+                            N = 14<sup>13</sup> <b>mod</b> 697 = 396 <br>
+                            G = 7<sup>13</sup> <b>mod</b> 697 = 176 <br><br>
+                            TURING = 692 497 256 501 396 176
+                        </p>
+                    </section>
+                    <section>
+                        <h4>E para descriptografar? <br><u>Caso vc não tenha dormido ainda</u></h4>
+                        <p>
+                            Usamos algorítimo de Euclides (aqui a coisa fica chatinha de fazer, 
+                            bem chatinha mesmo)
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            1- Dividir e por &#934(n) &#8594; 13/640 = 13, resto 0 <br><br>
+                            2- Divisor anterior pelo resto &#8594; 640/13 = 49 resto 3 <br><br>
+                            3- Mesmo processo &#8594; 13/3 = 4 resto 1 <br><br>
+                            No 1 paramos e usamos a fórmula(<b>f</b>) &#8594; <br> r = (1 * X) - (C * Y)
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            4- Aplicar no passo 1 e 2 usando <b>f</b>: <br>
+                            13 = (1*13) - (0*640) <br>
+                            3 = (1*640) - (48*13) <br><br>
+                            então temos que: <br>
+                            3 = (1*640) - 48 * [(1*13)-(0*640)] <br><br>
+                            Distribuimos a multiplicação mas n alteramos o X e o Y, e somamos os múltiplos comuns: <br>
+                            3 = (1*640) - (48*13)
+                        </p>
+                    </section>
+                    <section>
+                        5- Repetir o passo 4 usando a igualdade do passo 3: <br>
+                        1 = (1 * 13) - (4 * 3) <br><br>
+                        1 = (1*13) - 4 * [(1 * 640) - (49 * 13)] <br>
+                        Novamente distribuimos sem alterar X e Y e somamos multiplos comuns: <br>
+                        1 = (197 * 13) - (4 * 640) 
+                    </section>
+                    <section>
+                        <h3>Chegando no FIM, parada pra propriedade importante</h3><br>
+                        <p>
+                            Se MDC[&#934(n),e] = 1 <br><br>
+                            <b>logo</b>, 1 = d * e - (r * &#934(n)) <br><br>
+                            Assim, o inverso do nosso <b>e</b> é um <b>d = 197</b>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Decifrando!!!</h2>
+                        <p>
+                            692 &#8594; 692<sup>197</sup> <b>mod</b> 697 = 20<br>
+                            497 &#8594; 497<sup>197</sup> <b>mod</b> 697 = 21<br>
+                            256 &#8594; 256<sup>197</sup> <b>mod</b> 697 = 18<br>
+                            501 &#8594; 501<sup>197</sup> <b>mod</b> 697 = 9<br>
+                            396 &#8594; 396<sup>197</sup> <b>mod</b> 697 = 14<br>
+                            176 &#8594; 176<sup>197</sup> <b>mod</b> 697 = 7<br>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Seguindo a tabela temos, <b>FINALMENTE:</b></h2>
+                        <table border="1">
+                            <tr><td>20</td><td>21</td><td>18</td><td>9</td><td>14</td><td>7</td></tr>
+                            <tr><td>T</td><td>U</td><td>R</td><td>I</td><td>N</td><td>G</td></tr>
+                        </table>
+                    </section>
                 </section>
                 <section data-background="Images/Matrix.gif">
                     <h3>Finalmente um pouco de código =)</h3>
